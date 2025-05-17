@@ -6,7 +6,7 @@ void merge(vector<int>&v,int mid,int left,int right){
     int i=left,j=mid+1;
     vector<int>temp;
     while(i<=mid && j<=right){
-        if(v[i]> v[j]){
+        if(v[i]< v[j]){
             temp.push_back(v[i]);
             i++;
         }
@@ -43,9 +43,7 @@ void merge_sort(vector<int>&v,int left,int right){
 int main(){
     vector<int> v = {5,8,34,2,4,90,45,23,6};
 merge_sort(v,0,8);
-// for(int val:v){
-//     cout<<val<<" ";
-// }
+
 for(int i =0;i<v.size();i++){
     cout<<v[i]<<" ";
 }

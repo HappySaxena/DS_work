@@ -1,0 +1,15 @@
+vector<int> v = {0,1,2,3,4,5,6};
+vector<int> inmst = {0};
+if(v.size() > inmst.size()){
+    for(int i = 0;i<inmst.size();i++{
+        for(int j = 0;j<v.size();j++){
+            if(arr[inmst[i]][v[j]] == 1){
+                cout<<inmst[i]<<" "<<v[j]<<" ";
+                inmst.push_back(v[j]);
+                v.erase(v.begin()+j);
+                break;
+            }
+        }
+    })
+    
+}

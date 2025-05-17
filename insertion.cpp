@@ -19,15 +19,21 @@ using namespace std;
 
 void insert_sort(vector<int>&v,int n)
 {
-for (int i = 1;i<n;i++){
+for (int i = 1;i<(n+1);i++){
     int key = v[i];
-    for(int j = i-1;j>=0;j--){
-        if(v[j]>key){
-            v[j+1] = v[j];
+    for(int j = i-1;j>0;j--){
+        // if(v[j]>key){
+        //     v[j+1] = v[j];
+        // }
+        // else{
+        //     v[j+1] = key;
+        //     break;
+        // }
+        if(v[j-1] < v[j]){
+            break;
         }
         else{
-            v[j+1] = key;
-            break;
+            swap(v[j],v[j-1]);
         }
     }
 
@@ -35,9 +41,9 @@ for (int i = 1;i<n;i++){
 }
 
 int main(){
-vector<int> v={0,45,2,60,45,34,10};
+vector<int> v={90,45,2,60,45,34,10};
 int n = v.size();
-cout<<n;
+
 insert_sort(v,n);
 for(auto num: v){
 cout<<num<<" ";
